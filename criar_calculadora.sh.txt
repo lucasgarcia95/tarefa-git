@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Cabeçalho
+echo "======================================="
+echo "Criador de Ambiente - Calculadora"
+echo "Autor: Seu Nome"
+echo "Data: $(date +%d/%m/%Y)"
+echo "======================================="
+
+# Criar diretório
+DIR="calculadora_paridade"
+if [ ! -d "$DIR" ]; then
+    mkdir "$DIR"
+    echo "Diretório '$DIR' criado com sucesso!"
+else
+    echo "Diretório '$DIR' já existe."
+fi
+
+# Caminho do arquivo Python
+ARQUIVO="$DIR/calculadora.py"
+
+# Criar o arquivo Python com o código fornecido
+cat <<EOF > "$ARQUIVO"
+#!/usr/bin/env python3
+# calculadora.py
+# Autor: Seu Nome
+# Data de criação: $(date +%d/%m/%Y)
+# Descrição: Verifica a paridade de uma lista de 4 números inseridos pelo usuário
+
+entrada_lista = input("Digite uma sequência de 04 números: ")
+
+# dividindo a string em uma lista de números inteiros
+Num_listados = list(map(int, entrada_lista.split()))
+
+# verificando se os números inseridos atendem à condicional - escrever 04 números
+if len(Num_listados) != 4:
+    print("Por favor, insira exatamente 04 números!")
+else:
+    print("Números listados: ", Num_listados)
+
+    # verificando a paridade
+    for numero in Num_listados:
+        if numero % 2 == 0:
+            print(f"O número {numero} é par.")
+        else:
+            print(f"O número {numero} é ímpar.")
+EOF
+
+# Permissão de execução
+chmod +x "$ARQUIVO"
+
+# Executar o script Python
+echo
+echo "Executando a calculadora..."
+python3 "$ARQUIVO"
+
+chmod +x criar_calculadora.sh
+
+./criar_calculadora.sh
