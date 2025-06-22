@@ -1,6 +1,28 @@
-# tarefa-git
-Arquivo em python
-Este script Bash tem como objetivo automatizar a criação de um ambiente de trabalho simples para uma calculadora de paridade em Python. A calculadora solicita ao usuário a inserção de quatro números e informa se cada um deles é par ou ímpar.
-Solicita que o usuário digite exatamente 4 números separados por espaço.
-Verifica se a quantidade de números fornecida é correta.
-Para cada número fornecido, identifica se ele é par ou ímpar e exibe o resultado.
+# Calculadora de Paridade
+
+Este projeto consiste em uma calculadora simples desenvolvida em Python. O programa solicita que o usuário insira uma sequência de **4 números inteiros** e, em seguida, informa se cada número é **par** ou **ímpar**.
+
+## estrutura do Projeto
+
+- `calculadora.py`: script principal que executa a lógica da calculadora.
+- `criar_calculadora.sh`: script shell para gerar o ambiente e executar o programa automaticamente.
+- `README.md`: este arquivo com as instruções de uso.
+
+## Como Executar
+
+### 1. Dar permissão de execução ao script `.sh`
+
+No terminal, dentro do diretório do projeto, execute:
+
+```bash
+chmod +x criar_calculadora.sh
+
+./criar_calculadora.sh
+
+Esse comando irá:
+
+    Criar a pasta calculadora_paridade (se ainda não existir),
+
+    Gerar o arquivo calculadora.py,
+
+    Executar o programa imediatamente.
